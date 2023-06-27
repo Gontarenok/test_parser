@@ -1,6 +1,10 @@
 # test_task_parser
 Написать парсер для сайта Метро (https://online.metro-cc.ru/)
 
+Выбрана категория Чистящие средства:
+https://online.metro-cc.ru/category/bytovaya-himiya/chistyaschie-sredstva?in_stock=1&order=price_asc'
+
+
 Спарсить любую категорию, где более 100 товаров, для городов Москва и Санкт-Петербург и выгрузить в любой удобный формат(csv, json, xlsx). Важно, чтобы товары были в наличии.
 
 

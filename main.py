@@ -1,5 +1,6 @@
 from time import sleep
 import re
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import chromedriver_binary
@@ -10,7 +11,6 @@ browser = webdriver.Chrome()
 
 browser.maximize_window()
 browser.get('https://online.metro-cc.ru/category/bytovaya-himiya/chistyaschie-sredstva?in_stock=1&order=price_asc')
-# WebDriverWait(browser, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".reply-button"))).click()
 
 modal_xpath = '//*[@id="__layout"]/div/div/div[7]/div[2]/div[2]/button[1]'
 WebDriverWait(browser, 20).until(EC.presence_of_element_located((By.XPATH, modal_xpath)))
@@ -28,6 +28,8 @@ browser.find_element(By.XPATH, modal_xpath).click()
 # count_int = re.sub(r'\D', '', count.text)
 # print(f'Количество товаров в категории: {count_int}')
 
+
+# Кнопка "показать еще", нажимаем пока находим ее на странице
 more_xpath = '//*[@id="catalog-wrapper"]/main/div[2]/button'
 
 while True:
@@ -39,7 +41,6 @@ while True:
         with open('result_pars.html', 'w') as file:
             file.write(browser.page_source)
         break
-
 
 
 
