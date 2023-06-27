@@ -42,12 +42,7 @@ while True:
             file.write(browser.page_source)
         break
 
-
-
-
     # WebDriverWait(browser, 20).until(EC.presence_of_element_located((By.XPATH, more_xpath)))
-    # browser.find_element(By.XPATH, more_xpath).click()
-
 
 
 sleep(10)
